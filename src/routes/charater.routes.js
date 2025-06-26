@@ -5,14 +5,14 @@ import {
     getCharacterById,
     updateCharacter,
     deletedCharacter
-} from "../controllers/charater.controller"
+} from "../controllers/charater.controller.js"
 
 const routeCharacter = Router()
 
 routeCharacter.post("/", createdCharacters)
 routeCharacter.get("/", getAllCharacter)
 routeCharacter.get("/:id",getCharacterById)
-routeCharacter.put("/id:", updateCharacter)
+routeCharacter.put("/:id", updateCharacter)
 routeCharacter.delete("/:id", deletedCharacter)
 
 export default routeCharacter;

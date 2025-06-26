@@ -1,7 +1,7 @@
 import express from "express"
 import dotenv from "dotenv"
-import { initDB } from "./src/config/database";
-import routeCharacter from "./src/routes/charater.routes";
+import { initDB } from "./src/config/database.js";
+import routeCharacter from "./src/routes/charater.routes.js";
 
 
 dotenv.config()
@@ -16,5 +16,4 @@ initDB().then(() =>  {
     app.listen(PORT, () =>{
         console.log(`Servidor corriendo en http://localhost:${PORT}`);
     })
-    
 })

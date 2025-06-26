@@ -15,7 +15,7 @@ export const createdCharacters = async (req, res) => {
     if (!Number.isInteger(ki))
       return res
         .status(400)
-        .json({ message: "El campo 'ki' debe ser un número entero válido." });
+        .json({ message: "El campo 'ki' debe ser un número entero." });
 
     if (gender !== "Male" && gender !== "Female")
       return res
@@ -24,7 +24,7 @@ export const createdCharacters = async (req, res) => {
 
     if (description && typeof description !== "string")
       return res.status(400).json({
-        message: "El campo 'description' debe ser una cadena de texto.",
+        message: "El campo 'description' debe ser un string.",
       });
 
     const existing = await Character.findOne({ where: { name } });
@@ -55,7 +55,7 @@ export const getCharacterById = async (req, res) => {
   try {
     const character = await Character.findByPk(req.params.id);
     if (character) res.json(character);
-    else res.status(404).json({ message: "Charactero no encontrado" });
+    else res.status(404).json({ message: "Personaje no encontrado" });
   } catch (err) {
     res.status(500).json({ error: err.message });
   }
@@ -70,7 +70,7 @@ export const updateCharacter = async (req, res) => {
       const updatedCharacter = await Character.findByPk(req.params.id);
       res.json(updatedCharacter);
     } else {
-      res.status(404).json({ message: "Charactero no encontrado" });
+      res.status(404).json({ message: "Personaje no encontrado" });
     }
   } catch (err) {
     res.status(500).json({ error: err.message });
@@ -80,8 +80,8 @@ export const updateCharacter = async (req, res) => {
 export const deletedCharacter = async (req, res) => {
   try {
     const deleted = await Character.destroy({ where: { id: req.params.id } });
-    if (deleted) res.json({ message: "Charactero eliminado" });
-    else res.status(404).json({ message: "Charactero no encontrado" });
+    if (deleted) res.json({ message: "Personaje eliminado" });
+    else res.status(404).json({ message: "Personaje no encontrado" });
   } catch (err) {
     res.status(500).json({ error: err.message });
   }
