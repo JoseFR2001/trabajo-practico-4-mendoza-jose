@@ -17,7 +17,6 @@
     "url": "https://github.com/JoseFR2001/trabajo-practico-4-mendoza-jose/issues"
   },
   "homepage": "https://github.com/JoseFR2001/trabajo-practico-4-mendoza-jose#readme",
-  "description": "",
   "dependencies": {
     "dotenv": "^16.5.0",
     "express": "^5.1.0",
@@ -26,5 +25,6 @@
   },
   "devDependencies": {
     "nodemon": "^3.1.10"
-  }
+  },
+  "description": ""
 }
