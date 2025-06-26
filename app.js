@@ -9,7 +9,7 @@ dotenv.config()
 const app = express();
 app.use(express.json())
 
-app.use("/", routeCharacter)
+app.use("/api/characters", routeCharacter)
 const PORT = process.env.PORT;
 
 initDB().then(() =>  {
